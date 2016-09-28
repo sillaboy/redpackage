@@ -128,13 +128,13 @@ public class RedPackageTest {
          FileInputStream instream = new FileInputStream(new File("D:/cert/apiclient_cert.p12"));
          try {
              System.out.println("load cert");
-             keyStore.load(instream, "1369179102".toCharArray());
+             keyStore.load(instream, "123456789".toCharArray());
          } finally {
              instream.close();
          }
          // Trust own CA and all self-signed certs
          SSLContext sslcontext = SSLContexts.custom()
-                 .loadKeyMaterial(keyStore, "1369179102".toCharArray())
+                 .loadKeyMaterial(keyStore, "123456789".toCharArray())
                  .build();
          // Allow TLSv1 protocol only
          SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(
